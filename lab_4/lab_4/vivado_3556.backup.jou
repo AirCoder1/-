@@ -1,0 +1,15 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Mon Jan  3 13:45:12 2022
+# Process ID: 3556
+# Current directory: C:/Users/AirCoder/Desktop/yinjian/no2/step_into_mips-lab_4/lab_4/lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent14452 C:\Users\AirCoder\Desktop\yinjian\no2\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr
+# Log file: C:/Users/AirCoder/Desktop/yinjian/no2/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+# Journal file: C:/Users/AirCoder/Desktop/yinjian/no2/step_into_mips-lab_4/lab_4/lab_4\vivado.jou
+# Running On: LAPTOP-AEPGRI6M, OS: Windows, CPU Frequency: 2894 MHz, CPU Physical cores: 16, Host memory: 16505 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/AirCoder/Desktop/yinjian/no2/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr
+update_compile_order -fileset sources_1

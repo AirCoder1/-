@@ -1,5 +1,5 @@
 # compile verilog/system verilog design source files
-verilog xil_defaultlib  --include "../../../../../../../Ó²¼þ×ÛºÏ/20174400³Â²ýæè_code" \
+verilog xil_defaultlib  \
 "../../../../lab_4.srcs/sources_1/ip/data_mem_1/sim/data_mem.v" \
 "../../../../lab_4.srcs/sources_1/ip/inst_mem_1/sim/inst_mem.v" \
 "../../../../../rtl/adder.v" \
