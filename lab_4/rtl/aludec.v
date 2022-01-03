@@ -64,6 +64,11 @@ module aludec(
 					`EXE_SLLV: alucontrolD <= `EXE_SLLV_OP;//sllv
 					`EXE_SRLV: alucontrolD <= `EXE_SRLV_OP;//srlv
 					`EXE_SRAV: alucontrolD <= `EXE_SRAV_OP;//srav
+					// ____________________data move instruction____________________
+                    `EXE_MFHI: alucontrolD <= `EXE_MFHI_OP;//mfhi
+                    `EXE_MFLO: alucontrolD <= `EXE_MFLO_OP;//mflo
+                    `EXE_MTHI: alucontrolD <= `EXE_MTHI_OP;//mthi
+                    `EXE_MTLO: alucontrolD <= `EXE_MTLO_OP;//mtlo
                    // ____________________arithmetic instruction____________________
                     `EXE_ADD:  alucontrolD <= `EXE_ADD_OP; //add
                     `EXE_SUB:  alucontrolD <= `EXE_SUB_OP; //sub

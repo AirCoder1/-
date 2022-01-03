@@ -30,18 +30,22 @@ module hazard(
 	output wire stallD,
 	//execute stage
 	input wire[4:0] rsE,rtE,
+	input wire [1:0] hilo_weE,     // hilo register write enable
 	input wire[4:0] writeregE,
 	input wire regwriteE,
 	input wire memtoregE,
 	output reg[1:0] forwardaE,forwardbE,
+	output wire [1:0] forwardhiloE,// hilo register forward control signal
 	output wire flushE,
 	//mem stage
 	input wire[4:0] writeregM,
+	input wire [1:0] hilo_weM,     // hilo register write enable
 	input wire regwriteM,
 	input wire memtoregM,
 
 	//write back stage
 	input wire[4:0] writeregW,
+	input wire [1:0] hilo_weW,     // hilo register write enable
 	input wire regwriteW
     );
 
@@ -77,6 +81,11 @@ module hazard(
 			end
 		end
 	end
+	
+	// [ type 3 ] read / write hilo register data forward
+	assign forwardhiloE =  (hilo_weE == 2'b00 & (hilo_weM == 2'b10 | hilo_weM == 2'b01 | hilo_weM == 2'b11)) ? 2'b01 :
+						   (hilo_weE == 2'b00 & (hilo_weW == 2'b10 | hilo_weW == 2'b01 | hilo_weW == 2'b11)) ? 2'b10 :
+						                                                                                       2'b00;
 
 	//stalls
 	assign #1 lwstallD = memtoregE & (rtE == rsD | rtE == rtD);

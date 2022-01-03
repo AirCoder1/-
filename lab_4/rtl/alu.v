@@ -58,7 +58,11 @@ module alu(
 	input wire[31:0] a,b,
 	input wire[4:0]sa,
 	input wire [7:0] alucontrol,   // control - alucontrol ( fake code only for pass between )
+	input wire [31:0] hi_in,   // hi_in ( high part register of multiplication in )
+    input wire [31:0] lo_in,   // lo_in ( low part register of multiplication in )
 	output reg[31:0] y,
+	output reg [31:0] hi_out,  // hi_out ( high part register of multiplication out )
+	output reg [31:0] lo_out,  // lo_out ( low part register of multiplication out )
 	output reg overflow,
 	output wire zero
     );
@@ -85,6 +89,11 @@ module alu(
 			`EXE_SLLV_OP: y <= b << a[4:0];  // shift left logical rs ( replace sa with rs )
 			`EXE_SRLV_OP: y <= b >> a[4:0];  // shift right logical rs
 			`EXE_SRAV_OP: y <= ({32{b[31]}} << (6'd32-{1'b0, a[4:0]})) | b >> a[4:0];    // srav - shift right arithmetic rs - set sa = 00000
+			// data move instruction
+			`EXE_MFHI_OP: y <= hi_in[31:0];  // mfhi - move from high register ( thus pass hi_in to y )
+			`EXE_MFLO_OP: y <= lo_in[31:0];  // mflo - move from low register ( thus pass lo_in to y )
+			`EXE_MTHI_OP: hi_out <= a;   // mthi - move to high register ( thus set hi_out )
+			`EXE_MTLO_OP: lo_out <= a;   // mtlo - move to low register ( thus set lo_out )
 			default : y <= 32'b0;
 		endcase	
 	end

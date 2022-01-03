@@ -4,6 +4,9 @@ Running: D:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'forwardhiloE' [C:/Users/AirCoder/Desktop/yinjian/add52/no3/step_into_mips-lab_4/lab_4/rtl/datapath.v:109]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 's' [C:/Users/AirCoder/Desktop/yinjian/add52/no3/step_into_mips-lab_4/lab_4/rtl/datapath.v:194]
+WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 's' [C:/Users/AirCoder/Desktop/yinjian/add52/no3/step_into_mips-lab_4/lab_4/rtl/datapath.v:201]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
@@ -17,6 +20,7 @@ Compiling module xil_defaultlib.controller
 Compiling module xil_defaultlib.hazard
 Compiling module xil_defaultlib.mux2(WIDTH=32)
 Compiling module xil_defaultlib.regfile
+Compiling module xil_defaultlib.hilo_reg
 Compiling module xil_defaultlib.pc(WIDTH=32)
 Compiling module xil_defaultlib.adder
 Compiling module xil_defaultlib.flopenr(WIDTH=32)
@@ -27,11 +31,14 @@ Compiling module xil_defaultlib.eqcmp
 Compiling module xil_defaultlib.floprc(WIDTH=32)
 Compiling module xil_defaultlib.floprc(WIDTH=10)
 Compiling module xil_defaultlib.floprc(WIDTH=5)
+Compiling module xil_defaultlib.floprc(WIDTH=64)
+Compiling module xil_defaultlib.floprc(WIDTH=2)
 Compiling module xil_defaultlib.mux3(WIDTH=32)
 Compiling module xil_defaultlib.alu
 Compiling module xil_defaultlib.mux2(WIDTH=5)
 Compiling module xil_defaultlib.flopr(WIDTH=32)
 Compiling module xil_defaultlib.flopr(WIDTH=5)
+Compiling module xil_defaultlib.flopr(WIDTH=64)
 Compiling module xil_defaultlib.datapath
 Compiling module xil_defaultlib.mips
 Compiling module blk_mem_gen_v8_4_5.blk_mem_gen_v8_4_5_output_stage(...
