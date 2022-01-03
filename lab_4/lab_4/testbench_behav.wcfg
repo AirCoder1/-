@@ -11,15 +11,15 @@
       </db_ref>
    </db_ref_list>
    <zoom_setting>
-      <ZoomStartTime time="304.300 ns"></ZoomStartTime>
-      <ZoomEndTime time="430.101 ns"></ZoomEndTime>
-      <Cursor1Time time="282.980 ns"></Cursor1Time>
+      <ZoomStartTime time="1,582.160 ns"></ZoomStartTime>
+      <ZoomEndTime time="1,708.161 ns"></ZoomEndTime>
+      <Cursor1Time time="1,608.360 ns"></Cursor1Time>
    </zoom_setting>
    <column_width_setting>
-      <NameColumnWidth column_width="155"></NameColumnWidth>
-      <ValueColumnWidth column_width="145"></ValueColumnWidth>
+      <NameColumnWidth column_width="150"></NameColumnWidth>
+      <ValueColumnWidth column_width="72"></ValueColumnWidth>
    </column_width_setting>
-   <WVObjectSize size="6" />
+   <WVObjectSize size="17" />
    <wvobject fp_name="/testbench/clk" type="logic">
       <obj_property name="ElementShortName">clk</obj_property>
       <obj_property name="ObjectShortName">clk</obj_property>
@@ -40,8 +40,52 @@
       <obj_property name="ElementShortName">memwrite</obj_property>
       <obj_property name="ObjectShortName">memwrite</obj_property>
    </wvobject>
-   <wvobject fp_name="/testbench/dut/mips/dp/rf/rf[2]" type="array">
-      <obj_property name="ElementShortName">[2][31:0]</obj_property>
-      <obj_property name="ObjectShortName">[2][31:0]</obj_property>
+   <wvobject fp_name="/testbench/dut/mips/dp/hiD" type="array">
+      <obj_property name="ElementShortName">hiD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hiD[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/loD" type="array">
+      <obj_property name="ElementShortName">loD[31:0]</obj_property>
+      <obj_property name="ObjectShortName">loD[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/hilo_weM" type="array">
+      <obj_property name="ElementShortName">hilo_weM[1:0]</obj_property>
+      <obj_property name="ObjectShortName">hilo_weM[1:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/hi_alu_outM" type="array">
+      <obj_property name="ElementShortName">hi_alu_outM[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hi_alu_outM[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/hi_div_outE" type="array">
+      <obj_property name="ElementShortName">hi_div_outE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hi_div_outE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/lo_div_outE" type="array">
+      <obj_property name="ElementShortName">lo_div_outE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">lo_div_outE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/start_iE" type="logic">
+      <obj_property name="ElementShortName">start_iE</obj_property>
+      <obj_property name="ObjectShortName">start_iE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/div_signalE" type="logic">
+      <obj_property name="ElementShortName">div_signalE</obj_property>
+      <obj_property name="ObjectShortName">div_signalE</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/hi_mux_outE" type="array">
+      <obj_property name="ElementShortName">hi_mux_outE[31:0]</obj_property>
+      <obj_property name="ObjectShortName">hi_mux_outE[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/div/ready_o" type="logic">
+      <obj_property name="ElementShortName">ready_o</obj_property>
+      <obj_property name="ObjectShortName">ready_o</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/div/opdata1_i" type="array">
+      <obj_property name="ElementShortName">opdata1_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">opdata1_i[31:0]</obj_property>
+   </wvobject>
+   <wvobject fp_name="/testbench/dut/mips/dp/div/opdata2_i" type="array">
+      <obj_property name="ElementShortName">opdata2_i[31:0]</obj_property>
+      <obj_property name="ObjectShortName">opdata2_i[31:0]</obj_property>
    </wvobject>
 </wave_config>

@@ -24,7 +24,7 @@ else
 fi
 export LD_LIBRARY_PATH
 
-HD_PWD='C:/Users/AirCoder/Desktop/yinjian/no2/step_into_mips-lab_4/lab_4/lab_4/lab_4.runs/inst_mem_synth_1'
+HD_PWD='C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/lab_4.runs/inst_mem_synth_1'
 cd "$HD_PWD"
 
 HD_LOG=runme.log

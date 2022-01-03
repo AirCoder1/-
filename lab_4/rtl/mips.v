@@ -30,53 +30,56 @@ module mips(
     );
 	
 	wire [5:0] opD,functD;
+	wire [1:0] hilo_weD;   // hilo register write enable
 	wire regdstE,alusrcE,pcsrcD,memtoregE,memtoregM,memtoregW,
 			regwriteE,regwriteM,regwriteW;
 	wire [7:0] alucontrolE;
 	wire flushE,equalD;
 
 	controller c(
-		clk,rst,
+		.clk(clk),.rst(rst),
 		//decode stage
-		opD,functD,
-		pcsrcD,branchD,equalD,jumpD,
+		.opD(opD),.functD(functD),
+		.pcsrcD(pcsrcD),.branchD(branchD),.equalD(equalD),.jumpD(jumpD),
+		.hilo_weD(hilo_weD),
 		
 		//execute stage
-		flushE,
-		memtoregE,alusrcE,
-		regdstE,regwriteE,	
-		alucontrolE,
+		.flushE(flushE),
+		.memtoregE(memtoregE),.alusrcE(alusrcE),
+		.regdstE(regdstE),.regwriteE(regwriteE),	
+		.alucontrolE(alucontrolE),
 
 		//mem stage
-		memtoregM,memwriteM,
-		regwriteM,
+		.memtoregM(memtoregM),.memwriteM(memwriteM),
+		.regwriteM(regwriteM),
 		//write back stage
-		memtoregW,regwriteW
+		.memtoregW(memtoregW),.regwriteW(regwriteW)
 		);
 	datapath dp(
-		clk,rst,
+		.clk(clk),.rst(rst),
 		//fetch stage
-		pcF,
-		instrF,
+		.pcF(pcF),
+		.instrF(instrF),
 		//decode stage
-		pcsrcD,branchD,
-		jumpD,
-		equalD,
-		opD,functD,
+		.pcsrcD(pcsrcD),.branchD(branchD),
+		.jumpD(jumpD),
+		.hilo_weD(hilo_weD),          // hilo_we
+		.equalD(equalD),
+		.opD(opD),.functD(functD),
 		//execute stage
-		memtoregE,
-		alusrcE,regdstE,
-		regwriteE,
-		alucontrolE,
-		flushE,
+		.memtoregE(memtoregE),
+		.alusrcE(alusrcE),.regdstE(regdstE),
+		.regwriteE(regwriteE),
+		.alucontrolE(alucontrolE),
+		.flushE(flushE),
 		//mem stage
-		memtoregM,
-		regwriteM,
-		aluoutM,writedataM,
-		readdataM,
+		.memtoregM(memtoregM),
+		.regwriteM(regwriteM),
+		.aluoutM(aluoutM),.writedataM(writedataM),
+		.readdataM(readdataM),
 		//writeback stage
-		memtoregW,
-		regwriteW
+		.memtoregW(memtoregW),
+		.regwriteW(regwriteW)
 	    );
 	
 endmodule

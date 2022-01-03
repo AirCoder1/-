@@ -25,6 +25,8 @@ module controller(
 	//decode stage
 	input wire[5:0] opD,functD,
 	output wire pcsrcD,branchD,equalD,jumpD,
+	output wire [1:0] hilo_weD,    // hilo_we
+
 	
 	//execute stage
 	input wire flushE,
@@ -50,11 +52,12 @@ module controller(
 	wire memwriteE;
 
 	maindec md(
-		opD,
-		memtoregD,memwriteD,
-		branchD,alusrcD,
-		regdstD,regwriteD,
-		jumpD
+		.op(opD),.funct(functD),
+		.memtoreg(memtoregD),.memwrite(memwriteD),
+		.branch(branchD),.alusrc(alusrcD),
+		.regdst(regdstD),.regwrite(regwriteD),
+		.jump(jumpD),
+		.hilo_we(hilo_weD)
 		);
 	aludec ad(.opD(opD),                  // operation code
 	   .functD(functD),            // function code
