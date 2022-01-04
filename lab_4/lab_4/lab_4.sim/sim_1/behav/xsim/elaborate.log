@@ -4,16 +4,13 @@ Running: D:/Xilinx/Vivado/2021.2/bin/unwrapped/win64.o/xelab.exe --incr --debug 
 Using 2 slave threads.
 Starting static elaboration
 Pass Through NonSizing Optimizer
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 'forwardhiloE' [C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/rtl/datapath.v:120]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 's' [C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/rtl/datapath.v:213]
-WARNING: [VRFC 10-3091] actual bit length 1 differs from formal bit length 2 for port 's' [C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/rtl/datapath.v:220]
 Completed static elaboration
 Starting simulation data flow analysis
 Completed simulation data flow analysis
 Time Resolution for simulation is 1ps
 Compiling module xil_defaultlib.maindec
 Compiling module xil_defaultlib.aludec
-Compiling module xil_defaultlib.floprc(WIDTH=13)
+Compiling module xil_defaultlib.flopenrc(WIDTH=13)
 Compiling module xil_defaultlib.flopr(WIDTH=3)
 Compiling module xil_defaultlib.flopr(WIDTH=2)
 Compiling module xil_defaultlib.controller
@@ -28,10 +25,9 @@ Compiling module xil_defaultlib.flopenrc(WIDTH=32)
 Compiling module xil_defaultlib.signext
 Compiling module xil_defaultlib.sl2
 Compiling module xil_defaultlib.eqcmp
-Compiling module xil_defaultlib.floprc(WIDTH=32)
-Compiling module xil_defaultlib.floprc(WIDTH=10)
-Compiling module xil_defaultlib.floprc(WIDTH=5)
-Compiling module xil_defaultlib.floprc(WIDTH=64)
+Compiling module xil_defaultlib.flopenrc(WIDTH=10)
+Compiling module xil_defaultlib.flopenrc(WIDTH=5)
+Compiling module xil_defaultlib.flopenrc(WIDTH=64)
 Compiling module xil_defaultlib.flopenrc(WIDTH=2)
 Compiling module xil_defaultlib.mux3(WIDTH=32)
 Compiling module xil_defaultlib.alu
@@ -39,6 +35,7 @@ Compiling module xil_defaultlib.div
 Compiling module xil_defaultlib.mux2(WIDTH=5)
 Compiling module xil_defaultlib.flopr(WIDTH=32)
 Compiling module xil_defaultlib.flopr(WIDTH=5)
+Compiling module xil_defaultlib.floprc(WIDTH=64)
 Compiling module xil_defaultlib.floprc(WIDTH=2)
 Compiling module xil_defaultlib.flopr(WIDTH=64)
 Compiling module xil_defaultlib.datapath

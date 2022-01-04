@@ -12,8 +12,6 @@ INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/AirCoder/Desktop/yinjian/a
 INFO: [VRFC 10-311] analyzing module controller
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/rtl/datapath.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module datapath
-INFO: [VRFC 10-2458] undeclared symbol forwardhiloE, assumed default net type wire [C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/rtl/datapath.v:120]
-INFO: [VRFC 10-2458] undeclared symbol flushM, assumed default net type wire [C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/rtl/datapath.v:278]
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/new/div.v" into library xil_defaultlib
 INFO: [VRFC 10-311] analyzing module div
 INFO: [VRFC 10-2263] Analyzing Verilog file "C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/rtl/eqcmp.v" into library xil_defaultlib

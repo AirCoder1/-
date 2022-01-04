@@ -34,7 +34,7 @@ module mips(
 	wire regdstE,alusrcE,pcsrcD,memtoregE,memtoregM,memtoregW,
 			regwriteE,regwriteM,regwriteW;
 	wire [7:0] alucontrolE;
-	wire flushE,equalD;
+	wire flushE,equalD,stallE;
 
 	controller c(
 		.clk(clk),.rst(rst),
@@ -45,6 +45,7 @@ module mips(
 		
 		//execute stage
 		.flushE(flushE),
+		.stallE(stallE),
 		.memtoregE(memtoregE),.alusrcE(alusrcE),
 		.regdstE(regdstE),.regwriteE(regwriteE),	
 		.alucontrolE(alucontrolE),
@@ -72,6 +73,7 @@ module mips(
 		.regwriteE(regwriteE),
 		.alucontrolE(alucontrolE),
 		.flushE(flushE),
+		.stallE(stallE),
 		//mem stage
 		.memtoregM(memtoregM),
 		.regwriteM(regwriteM),

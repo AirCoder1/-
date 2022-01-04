@@ -41,6 +41,7 @@ module datapath(
 	//mem stage
 	input wire memtoregM,
 	input wire regwriteM,
+	output wire flushM,
 	output wire[31:0] aluoutM,writedataM,
 	input wire[31:0] readdataM,
 	//writeback stage
@@ -64,6 +65,7 @@ module datapath(
 	wire [31:0] loD;       // low of multiplication
 	//execute stage
 	wire [1:0] forwardaE,forwardbE;
+	wire [1:0] forwardhiloE;
 	wire [4:0] rsE,rtE,rdE;
 	wire [4:0] saE;
 	wire [4:0] writeregE;
@@ -123,6 +125,7 @@ module datapath(
 		//mem stage
 		.writeregM(writeregM),
 		.hilo_weM(hilo_weM),      // hilo_we
+		.flushM(flushM),
 		.regwriteM(regwriteM),
 		.memtoregM(memtoregM),
 		//write back stage
@@ -177,17 +180,17 @@ module datapath(
 	assign saD = instrD[10:6];
 
 	//execute stage
-	floprc #(32) r1E(clk,rst,flushE,srcaD,srcaE);
-	floprc #(32) r2E(clk,rst,flushE,srcbD,srcbE);
-	floprc #(32) r3E(clk,rst,flushE,signimmD,signimmE);
-	floprc #(10) r4E(.clk(clk),.rst(rst),.clear(flushE),.d({rsD,saD}),.q({rsE,saE}));
+	flopenrc #(32) r1E(clk,rst,~stallE,flushE,srcaD,srcaE);
+	flopenrc #(32) r2E(clk,rst,~stallE,flushE,srcbD,srcbE);
+	flopenrc #(32) r3E(clk,rst,~stallE,flushE,signimmD,signimmE);
+	flopenrc #(10) r4E(.clk(clk),.rst(rst),.en(~stallE),.clear(flushE),.d({rsD,saD}),.q({rsE,saE}));
 	//floprc #(10) r4E(.clk(clk),.rst(rst),.clear(flushE),.d({rsD,saD,alucontrolD}),.q({rsE,saE}));
-	floprc #(5) r5E(clk,rst,flushE,rtD,rtE);
-	floprc #(5) r6E(clk,rst,flushE,rdD,rdE);
+	flopenrc #(5) r5E(clk,rst,~stallE,flushE,rtD,rtE);
+	flopenrc #(5) r6E(clk,rst,~stallE,flushE,rdD,rdE);
 	
-	floprc #(64) r8E(    // 8
+	flopenrc #(64) r8E(    // 8
 	   .clk(clk),          // clock
-	   //.en(~stallE),   // stall == 0 - enable otherwise disable
+	   .en(~stallE),   // stall == 0 - enable otherwise disable
 	   .rst(rst),          // reset
 	   .clear(flushE),     // flush == 1 - clear
 	   .d({hiD, loD}),     // pass on
@@ -195,7 +198,7 @@ module datapath(
     );
     flopenrc #(2) r9E(     // 9
 	   .clk(clk),          // clock
-	   //.en(~stallE),   // stall == 0 - enable otherwise disable
+	   .en(~stallE),   // stall == 0 - enable otherwise disable
 	   .rst(rst),          // reset
 	   .clear(flushE),     // flush == 1 - clear
 	   .d(hilo_weD),       // hilo register write enable
@@ -234,6 +237,7 @@ module datapath(
 	assign signed_divE = (alucontrolE == `EXE_DIV_OP) ? 1'b1 : 
 	                       (alucontrolE == `EXE_DIVU_OP) ? 1'b0 : 
 	                       1'b0;
+	
     // whether operation is div type
     assign div_signalE = ((alucontrolE == `EXE_DIV_OP) | (alucontrolE == `EXE_DIVU_OP)) ? 1'b1 : 
                             1'b0;
