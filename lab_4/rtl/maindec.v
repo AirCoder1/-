@@ -89,6 +89,15 @@ module maindec(
             `EXE_ADDIU: controls <= {7'b1010000, 2'b00};
             `EXE_SLTI : controls <= {7'b1010000, 2'b00};
             `EXE_SLTIU: controls <= {7'b1010000, 2'b00};
+            // ____________________memory access instruction____________________ ( 8 in total )
+            `EXE_LB  : controls <= {7'b1010010, 2'b00};
+            `EXE_LBU : controls <= {7'b1010010, 2'b00};
+            `EXE_LH  : controls <= {7'b1010010, 2'b00};
+            `EXE_LHU : controls <= {7'b1010010, 2'b00};
+            `EXE_LW  : controls <= {7'b1010010, 2'b00};
+            `EXE_SB  : controls <= {7'b0010100, 2'b00};
+            `EXE_SH  : controls <= {7'b0010100, 2'b00};
+            `EXE_SW  : controls <= {7'b0010100, 2'b00};
             
 			`EXE_J:controls <= {7'b0000001,2'b00};//J
 			//logic

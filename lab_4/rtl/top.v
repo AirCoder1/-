@@ -27,8 +27,9 @@ module top(
     );
 
 	wire[31:0] pc,instr,readdata;
+	wire[3:0] data_sram_wenM;
 
-	mips mips(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata);
+	mips mips(clk,rst,pc,instr,memwrite,dataadr,writedata,readdata,data_sram_wenM);
 	inst_mem imem(~clk,pc,instr);
-	data_mem dmem(~clk,{4{memwrite}},dataadr,writedata,readdata);
+	data_mem dmem(~clk,data_sram_wenM,dataadr,writedata,readdata);
 endmodule

@@ -38,14 +38,18 @@ module datapath(
 	input wire[7:0] alucontrolE,
 	output wire stallE,            // stall
 	output wire flushE,
+	output wire[5:0] opE,
 	//mem stage
 	input wire memtoregM,
 	input wire regwriteM,
+	output wire flushM,
 	output wire[31:0] aluoutM,writedataM,
 	input wire[31:0] readdataM,
+	output wire[5:0] opM,
 	//writeback stage
 	input wire memtoregW,
-	input wire regwriteW
+	input wire regwriteW,
+	output wire[3:0] data_sram_wenM
     );
 	
 	//fetch stage
@@ -64,6 +68,7 @@ module datapath(
 	wire [31:0] loD;       // low of multiplication
 	//execute stage
 	wire [1:0] forwardaE,forwardbE;
+	wire [1:0] forwardhiloE;
 	wire [4:0] rsE,rtE,rdE;
 	wire [4:0] saE;
 	wire [4:0] writeregE;
@@ -97,6 +102,8 @@ module datapath(
 	wire [31:0] hi_alu_outW;   // high register multiplication out
 	wire [31:0] lo_alu_outW;   // low register multiplication out
 	wire [31:0] aluoutW,readdataW,resultW;
+	wire [31:0] readdataM_real;    //ls
+	wire [31:0]writedataM_temp;    //ls
 
 	//hazard detection
 	hazard h(
@@ -123,6 +130,7 @@ module datapath(
 		//mem stage
 		.writeregM(writeregM),
 		.hilo_weM(hilo_weM),      // hilo_we
+		.flushM(flushM),
 		.regwriteM(regwriteM),
 		.memtoregM(memtoregM),
 		//write back stage
@@ -177,17 +185,19 @@ module datapath(
 	assign saD = instrD[10:6];
 
 	//execute stage
-	floprc #(32) r1E(clk,rst,flushE,srcaD,srcaE);
-	floprc #(32) r2E(clk,rst,flushE,srcbD,srcbE);
-	floprc #(32) r3E(clk,rst,flushE,signimmD,signimmE);
-	floprc #(10) r4E(.clk(clk),.rst(rst),.clear(flushE),.d({rsD,saD}),.q({rsE,saE}));
+	flopenrc #(32) r1E(clk,rst,~stallE,flushE,srcaD,srcaE);
+	flopenrc #(32) r2E(clk,rst,~stallE,flushE,srcbD,srcbE);
+	flopenrc #(32) r3E(clk,rst,~stallE,flushE,signimmD,signimmE);
+	flopenrc #(10) r4E(.clk(clk),.rst(rst),.en(~stallE),.clear(flushE),.d({rsD,saD}),.q({rsE,saE}));
 	//floprc #(10) r4E(.clk(clk),.rst(rst),.clear(flushE),.d({rsD,saD,alucontrolD}),.q({rsE,saE}));
-	floprc #(5) r5E(clk,rst,flushE,rtD,rtE);
-	floprc #(5) r6E(clk,rst,flushE,rdD,rdE);
+	flopenrc #(5) r5E(clk,rst,~stallE,flushE,rtD,rtE);
+	flopenrc #(5) r6E(clk,rst,~stallE,flushE,rdD,rdE);
+	//op pinline
+	floprc #(6) r7E(clk,rst,flushE,opD,opE);
 	
-	floprc #(64) r8E(    // 8
+	flopenrc #(64) r8E(    // 8
 	   .clk(clk),          // clock
-	   //.en(~stallE),   // stall == 0 - enable otherwise disable
+	   .en(~stallE),   // stall == 0 - enable otherwise disable
 	   .rst(rst),          // reset
 	   .clear(flushE),     // flush == 1 - clear
 	   .d({hiD, loD}),     // pass on
@@ -195,7 +205,7 @@ module datapath(
     );
     flopenrc #(2) r9E(     // 9
 	   .clk(clk),          // clock
-	   //.en(~stallE),   // stall == 0 - enable otherwise disable
+	   .en(~stallE),   // stall == 0 - enable otherwise disable
 	   .rst(rst),          // reset
 	   .clear(flushE),     // flush == 1 - clear
 	   .d(hilo_weD),       // hilo register write enable
@@ -234,6 +244,7 @@ module datapath(
 	assign signed_divE = (alucontrolE == `EXE_DIV_OP) ? 1'b1 : 
 	                       (alucontrolE == `EXE_DIVU_OP) ? 1'b0 : 
 	                       1'b0;
+	
     // whether operation is div type
     assign div_signalE = ((alucontrolE == `EXE_DIV_OP) | (alucontrolE == `EXE_DIVU_OP)) ? 1'b1 : 
                             1'b0;
@@ -268,7 +279,7 @@ module datapath(
 
 	//mem stage
     // [ execute stage ] -> [ memory access stage ] - pipeline register
-	flopr #(32) r1M(clk,rst,srcb2E,writedataM);
+	flopr #(32) r1M(clk,rst,srcb2E,writedataM_temp);
 	flopr #(32) r2M(clk,rst,aluoutE,aluoutM);
 	flopr #(5) r3M(clk,rst,writeregE,writeregM);
 	floprc #(64) r4M(    // 1
@@ -279,6 +290,8 @@ module datapath(
 	   .d({hi_mux_outE,lo_mux_outE}),  // pass on ( rename hi_alu_outM as hi_mux_outM to pass on )
 	   .q({hi_alu_outM,lo_alu_outM})   // pass on
     );
+    //op pinline
+    flopr #(6) r5M(clk,rst,opE,opM);
     //hiloÁ÷Ë®
     floprc #(64) r8M(    // 1
 	   .clk(clk),          // clock
@@ -296,12 +309,15 @@ module datapath(
 	   .d(hilo_weE),       // hilo register write enable
 	   .q(hilo_weM)        // hilo register write enable
     );
+    //lsÖ¸Áî
+    lsmem lsmen(opM,aluoutM,readdataM_real,readdataM,writedataM,writedataM_temp,data_sram_wenM);
+
     
 
 	//writeback stage
 	// [ execute stage ] -> [ memory access stage ] - pipeline register
 	flopr #(32) r1W(clk,rst,aluoutM,aluoutW);
-	flopr #(32) r2W(clk,rst,readdataM,readdataW);
+	flopr #(32) r2W(clk,rst,readdataM_real,readdataW);
 	flopr #(5) r3W(clk,rst,writeregM,writeregW);
 	flopr #(64) r4W(  // 1
        .clk(clk),      // clock

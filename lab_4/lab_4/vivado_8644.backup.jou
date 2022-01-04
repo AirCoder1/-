@@ -1,0 +1,116 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Tue Jan  4 15:11:16 2022
+# Process ID: 8644
+# Current directory: C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent6576 C:\Users\AirCoder\Desktop\yinjian\add52\no4\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr
+# Log file: C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+# Journal file: C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4\vivado.jou
+# Running On: LAPTOP-AEPGRI6M, OS: Windows, CPU Frequency: 2894 MHz, CPU Physical cores: 16, Host memory: 16505 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/rst}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/clk}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/signed_div_i}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/start_i}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/annul_i}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/result_o}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/ready_o}} 
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/clk}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/rst}} 
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/hi_alu_outM}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/lo_alu_outM}} 
+relaunch_sim
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/hilo_weM}} 
+relaunch_sim
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/hilo_weE}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/hilo_weM}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/hilo_weD}} 
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/flushM}} 
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no4/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+close_sim

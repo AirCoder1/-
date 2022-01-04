@@ -91,6 +91,15 @@ module aludec(
             `EXE_ADDIU:alucontrolD <= `EXE_ADD_OP;   // addiu
             `EXE_SLTI: alucontrolD <= `EXE_SLT_OP;   // slt
             `EXE_SLTIU:alucontrolD <= `EXE_SLTU_OP;  // sltu
+            //load store
+			`EXE_LB    : alucontrolD <= `EXE_LB_OP ;
+			`EXE_LBU   : alucontrolD <= `EXE_LBU_OP;
+            `EXE_LH    : alucontrolD <= `EXE_LH_OP ;
+            `EXE_LHU   : alucontrolD <= `EXE_LHU_OP;
+            `EXE_LW    : alucontrolD <= `EXE_LW_OP ;
+            `EXE_SB    : alucontrolD <= `EXE_SB_OP ;
+            `EXE_SH    : alucontrolD <= `EXE_SH_OP ;
+            `EXE_SW    : alucontrolD <= `EXE_SW_OP ;
             default:  alucontrolD <= 8'b00000000;	   // all 0 by default
         endcase
     end

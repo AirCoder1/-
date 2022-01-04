@@ -26,7 +26,8 @@ module mips(
 	input wire[31:0] instrF,
 	output wire memwriteM,
 	output wire[31:0] aluoutM,writedataM,
-	input wire[31:0] readdataM 
+	input wire[31:0] readdataM,
+	output wire[3:0] data_sram_wenM
     );
 	
 	wire [5:0] opD,functD;
@@ -34,7 +35,7 @@ module mips(
 	wire regdstE,alusrcE,pcsrcD,memtoregE,memtoregM,memtoregW,
 			regwriteE,regwriteM,regwriteW;
 	wire [7:0] alucontrolE;
-	wire flushE,equalD;
+	wire flushE,equalD,stallE;
 
 	controller c(
 		.clk(clk),.rst(rst),
@@ -45,6 +46,7 @@ module mips(
 		
 		//execute stage
 		.flushE(flushE),
+		.stallE(stallE),
 		.memtoregE(memtoregE),.alusrcE(alusrcE),
 		.regdstE(regdstE),.regwriteE(regwriteE),	
 		.alucontrolE(alucontrolE),
@@ -72,6 +74,7 @@ module mips(
 		.regwriteE(regwriteE),
 		.alucontrolE(alucontrolE),
 		.flushE(flushE),
+		.stallE(stallE),
 		//mem stage
 		.memtoregM(memtoregM),
 		.regwriteM(regwriteM),
@@ -79,7 +82,8 @@ module mips(
 		.readdataM(readdataM),
 		//writeback stage
 		.memtoregW(memtoregW),
-		.regwriteW(regwriteW)
+		.regwriteW(regwriteW),
+		.data_sram_wenM(data_sram_wenM)
 	    );
 	
 endmodule

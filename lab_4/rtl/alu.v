@@ -96,6 +96,16 @@ module alu(
 			`EXE_MFLO_OP: y <= lo_in[31:0];  // mflo - move from low register ( thus pass lo_in to y )
 			`EXE_MTHI_OP: hi_out <= a;   // mthi - move to high register ( thus set hi_out )
 			`EXE_MTLO_OP: lo_out <= a;   // mtlo - move to low register ( thus set lo_out )
+			//load /store
+			`EXE_LB_OP   :y = a + b;
+		    `EXE_LBU_OP  :y = a + b;
+            `EXE_LH_OP   :y = a + b;
+            `EXE_LHU_OP  :y = a + b;
+            `EXE_LW_OP   :y = a + b;
+            `EXE_SB_OP   :y = a + b;
+            `EXE_SH_OP   :y = a + b;
+            `EXE_SW_OP   :y = a + b;
+
 			default : y <= 32'b0;
 		endcase	
 	end

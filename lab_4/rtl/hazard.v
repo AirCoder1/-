@@ -44,6 +44,7 @@ module hazard(
 	//mem stage
 	input wire[4:0] writeregM,
 	input wire [1:0] hilo_weM,     // hilo register write enable
+	output wire flushM,
 	input wire regwriteM,
 	input wire memtoregM,
 
@@ -114,6 +115,7 @@ module hazard(
 		//stalling D stalls all previous stages
 	assign #1 flushE = lwstallD | branchstallD;    //计组原stallD的值（stall because branch/lw）
 		//stalling D flushes next stage
+	assign #1 flushM = div_start;
 	// Note: not necessary to stall D stage on store
   	//       if source comes from load;
   	//       instead, another bypass network could
