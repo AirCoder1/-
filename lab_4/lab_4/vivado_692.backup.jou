@@ -1,0 +1,290 @@
+#-----------------------------------------------------------
+# Vivado v2021.2 (64-bit)
+# SW Build 3367213 on Tue Oct 19 02:48:09 MDT 2021
+# IP Build 3369179 on Thu Oct 21 08:25:16 MDT 2021
+# Start of session at: Wed Jan  5 15:31:27 2022
+# Process ID: 692
+# Current directory: C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4
+# Command line: vivado.exe -gui_launcher_event rodinguilauncherevent7688 C:\Users\AirCoder\Desktop\yinjian\add52\no6\step_into_mips-lab_4\lab_4\lab_4\lab_4.xpr
+# Log file: C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/vivado.log
+# Journal file: C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4\vivado.jou
+# Running On: LAPTOP-AEPGRI6M, OS: Windows, CPU Frequency: 2894 MHz, CPU Physical cores: 16, Host memory: 16505 MB
+#-----------------------------------------------------------
+start_gui
+open_project C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.xpr
+update_compile_order -fileset sources_1
+set_property -dict [list CONFIG.Coe_File {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/coe/funcTest_independent/ArithmeticTest/obj/inst_ram.coe}] [get_ips inst_mem]
+generate_target all [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+catch { config_ip_cache -export [get_ips -all inst_mem] }
+catch { [ delete_ip_run [get_ips -all inst_mem] ] }
+export_ip_user_files -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+export_simulation -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -directory C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+update_compile_order -fileset sources_1
+set_property -dict [list CONFIG.Coe_File {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/coe/funcTest_independent/ArithmeticTest/obj/inst_ram.coe}] [get_ips inst_mem]
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+set_property -dict [list CONFIG.Coe_File {c:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/coe/funcTest_independent/ArithmeticTest/obj/inst_ram.coe}] [get_ips inst_mem]
+set_property generate_synth_checkpoint false [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+generate_target all [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+export_ip_user_files -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -no_script -sync -force -quiet
+export_simulation -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -directory C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+set_property generate_synth_checkpoint true [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+generate_target all [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+catch { config_ip_cache -export [get_ips -all inst_mem] }
+export_ip_user_files -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+export_simulation -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -directory C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/start_i}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/opdata1_i}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/opdata2_i}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/result_o}} 
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/signed_div_i}} 
+relaunch_sim
+run 10 us
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/div/ready_o}} 
+relaunch_sim
+run 10 us
+set_property -dict [list CONFIG.Coe_File {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/coe/funcTest_independent/DataMoveInstTest/obj/inst_ram.coe}] [get_ips inst_mem]
+generate_target all [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+catch { config_ip_cache -export [get_ips -all inst_mem] }
+export_ip_user_files -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+export_simulation -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -directory C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/hilo/hi_o}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/hilo/lo_o}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/instr}} 
+relaunch_sim
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+set_property -dict [list CONFIG.Coe_File {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/coe/funcTest_independent/ArithmeticTest/obj/inst_ram.coe}] [get_ips inst_mem]
+generate_target all [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+catch { config_ip_cache -export [get_ips -all inst_mem] }
+export_ip_user_files -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+export_simulation -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -directory C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/instr}} 
+relaunch_sim
+run 10 us
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+run 10 us
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/pcF}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcplus4F}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcbranchD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcnextbrFD}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/pcF}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcnextFD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcbranchD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcjrFD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcplus4D}} 
+relaunch_sim
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/jrD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/jalrD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/jumpD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/jalD}} 
+relaunch_sim
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+set_property -dict [list CONFIG.Coe_File {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/coe/funcTest_independent/j_BTest/Test1/obj/inst_ram.coe}] [get_ips inst_mem]
+generate_target all [get_files  C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+catch { config_ip_cache -export [get_ips -all inst_mem] }
+export_ip_user_files -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -no_script -sync -force -quiet
+create_ip_run [get_files -of_objects [get_fileset sources_1] C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci]
+launch_runs inst_mem_synth_1 -jobs 8
+wait_on_run inst_mem_synth_1
+export_simulation -of_objects [get_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/ip/inst_mem_1/inst_mem.xci] -directory C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/sim_scripts -ip_user_files_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files -ipstatic_source_dir C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.ip_user_files/ipstatic -lib_map_path [list {modelsim=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/modelsim} {questa=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/questa} {riviera=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/riviera} {activehdl=C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.cache/compile_simlib/activehdl}] -use_ip_compiled_libs -force -quiet
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+run 10 us
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/pcnextFD}} {{/testbench/dut/mips/dp/pcnextbrFD}} {{/testbench/dut/mips/dp/pcplus4F}} {{/testbench/dut/mips/dp/pcbranchD}} {{/testbench/dut/mips/dp/pcjrFD}} {{/testbench/dut/mips/dp/pcplus4D}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/srca2D}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/srcaD}} 
+relaunch_sim
+update_compile_order -fileset sources_1
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+update_compile_order -fileset sources_1
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+close [ open C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/new/mux4.v w ]
+add_files C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/lab_4.srcs/sources_1/new/mux4.v
+update_compile_order -fileset sources_1
+update_compile_order -fileset sources_1
+close_sim
+launch_simulation
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/srcaD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/srcbD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/srcb2D}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/instrF}} 
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/aluout2E}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/resultM}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/resultW}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/forwardaD}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/srca2D}} 
+relaunch_sim
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/aluoutM}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/readdataM_real}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/memtoregM}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/readdataM}} 
+relaunch_sim
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/jumpM}} {{/testbench/dut/mips/dp/jalM}} {{/testbench/dut/mips/dp/jrM}} {{/testbench/dut/mips/dp/jalrM}} 
+relaunch_sim
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/stallF}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/stallE}} 
+current_wave_config {testbench_behav.wcfg}
+add_wave {{/testbench/dut/mips/dp/stallD}} 
+relaunch_sim
+save_wave_config {C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg}
+close_sim
+launch_simulation
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+close_sim
+launch_simulation
+open_wave_config C:/Users/AirCoder/Desktop/yinjian/add52/no6/step_into_mips-lab_4/lab_4/lab_4/testbench_behav.wcfg
+source testbench.tcl
+close_sim
